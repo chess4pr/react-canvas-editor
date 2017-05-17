@@ -1,0 +1,105 @@
+#ZEstimate {
+    width: 210px;
+    float: left;
+    margin:4px;
+}
+
+#ZGrades {
+    width: 70px;
+    float: left;
+}
+
+#ZGrades div {
+    width: 18px;
+    float: left;
+    text-align: center;
+    padding: 4px;
+}
+
+#ZGrades input {
+    width: 24px;
+    float: left;
+    margin: 1px 10px;
+    text-align: center;
+}
+
+.ZGradesLabel {
+    width: 65px;
+}
+
+#ZRecogn {
+    width: 125px;
+    float: left;
+}
+
+#ZRecogn div {
+    width: 30px;
+    float: left;
+    text-align: center;
+    padding: 4px;
+    overflow: hidden;
+}
+
+#ZRecogn input {
+    width: 30px;
+    float: left;
+    margin: 1px 10px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 2px;
+    margin: 2px;
+}
+
+li {
+    overflow-x: auto;
+    overflow-y: hidden;
+    float: left;
+    width:100%;
+}
+
+li:first-child {
+    background: #ccd2de;
+    font-size: 12px;
+    float: left;
+    margin-bottom:4px;
+    padding:6px 2px 6px 2px ;
+    text-align: center;
+    border-radius: 4px;
+}
+
+li:nth-child(2n+3) {
+    background: #f1f1f1
+}
+
+.alert-danger{
+    background-color:red;
+}
+
+.badge{
+    margin: 6px 2px;
+}
+
+.cat_1{
+    background-color: #0b97c4;
+    color: #fff;
+}
+
+
+.cat_2{
+    background-color: #15ba3c;
+    color: #fff;
+}
+
+.cat_info{
+    font-size: 10px;
+    color: gray;
+}
+
+.ZBtn{
+    width: 180px;
+    margin: 8px;
+}

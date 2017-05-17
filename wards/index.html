@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>jsTree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="robots" content="index,follow"/>
+    <link rel="stylesheet"
+          href="./wards/lib/css/themes/proton/awesome/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./wards/lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./wards/lib/css/themes/proton/style.css"/>
+    <script src="./wards/lib/js/jquery-1.10.2.min.js"></script>
+    <script src="./wards/lib/js/jstree.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="./wards/lib/js/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<div class="container" id="content">
+    <div id="wards" class="clear" class="col-lg-6 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-4 text-left pull-right">
+                        <div>Сумма к оплате</div>
+                        <div class="huge" id="amount">0руб</div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-6 col-xs-8">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true" style="
+    font-size: 58px;float:left; margin-right:10px"></i>
+
+                        <span style="margin:15px 0 15px 15px">Цена продукта на <span id="packageSize">0</span> учеников
+                            <span id="packagePrice">0</span>руб.</span><br/>
+                        <span style="margin:15px 0 15px 15px"> Куплено продуктов: <span
+                                id="paidPackages">0</span></span><br/>
+                        <span style="margin:15px 0 15px 15px"> Учеников в купленных продуктах:
+                                <i class="fa fa-user"></i> <span class="badge" id="paidStudents">0</span> </span><br/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="alert alert-info">
+                    <strong><i class="fa fa-info-circle" aria-hidden="true" style="font-size:20px"></i></strong>
+                            <span style="margin:15px 0 15px 15px"> Выбрано:
+                                <i class="fa fa-user"></i> <span class="badge count">0</span>
+                        </span>
+                    <span style="margin:15px 0 15px 15px"> Добавить без изменения цены:
+                                <i class="fa fa-user"></i> <span id="restWards" class="badge"
+                            >0</span> </span>
+                </div>
+                <div class="alert alert-success" style="display: none">
+                    <strong><i class="fa fa-info-circle" aria-hidden="true" style="font-size:20px"></i></strong>
+                       <span style="margin:15px 0 15px 15px"> Выбрано:
+                                <i class="fa fa-user"></i> <span class="badge count">0</span>
+                        </span>
+                    <span style="margin:15px 0 15px 15px">
+                            Продуктов: <span id="packages" class="badge"
+                        >0</span>
+                           </span>
+                    <span style="margin:15px 0 15px 15px"
+                    >
+                    Добавить без изменения цены:
+                    <i class="fa fa-user"></i> <span id="restСurWards" class="badge"
+                >0</span> </span>
+                    </span>
+                </div>
+                    <span style="font-size: 12px;">
+                    <a href="#" class="collapse"
+                       onclick="$('#students').jstree('close_all'); $('.expand').show();$(this).hide();">свернуть</a>
+                                       <a href="#" class="expand"
+                                          onclick="$('#students').jstree('open_all');$('.collapse').show();$(this).hide();">развернуть</a>
+                    </span>
+                <div id="students" class="students"></div>
+                <button type="button" onclick="getChecked(true, null)" style="margin:10px 0 0 0"
+                        class="btn btn-warning">
+                    Добавить для выбранных учеников
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="wards/lib/js/wards.min.js"></script>
+
+</body>
+
+</html>

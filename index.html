@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- bootstrap4 and jQuery3-->
+    <script src="checker/lib/js/vendors/tether.min.js"></script>
+    <script src="checker/lib/js/vendors/jquery.min.js"></script>
+    <script src="checker/lib/js/vendors/bootstrap.min.js"></script>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="checker/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="checker/lib/css/literallycanvas.css">
+    <!-- dependency: React.js -->
+    <script src="checker/lib/js/vendors/react-15.4.2.min.js"></script>
+    <script src="checker/lib/js/vendors/react-dom-15.4.2.min.js"></script>
+    <!-- Literally Canvas -->
+    <script src="checker/lib/js/literallycanvas.min.js"></script>
+</head>
+<body style="margin: 0; background-image: url(tmp/znanikaHead.png); background-repeat: no-repeat;">
+<!-- Temp Nav -->
+<div style="width:127px; height:768px; background-image: url(tmp/znanikaBgr.png); float:left"></div>
+
+<!-- Начало кода подключения Проверятора-->
+<div id="checker-div"></div>
+<script src="checker/lib/js/checker.min.js"></script>
+<script>
+    $(function () {
+        var ZSolution = {
+            "id": 123322,
+            "taskсode": 456,
+            "student": {
+                "regnumber": "101999",
+                "firstname": "Василий",
+                "lastname": "Пупкин",
+            },
+            "pages": [
+                {
+                    "image": "tmp/1.jpg",
+                    "conform_template": "yes",
+                    "id": "112"
+                },
+                {
+                    "image": "tmp/22.jpg",
+                    "conform_template": "yes",
+                    "id": "114"
+                },
+                {
+                    "image": "tmp/1.jpg",
+                    "conform_template": "yes",
+                    "id": "116"
+                }
+            ]
+        };
+        var params = {
+            "elementId": "checker-div", /* div где будет инициирован Проверятор */
+            "solution": ZSolution, /* Объект решение */
+            "teacherID": 3434, /* Нужен для формирования кодов проверенных страниц */
+            "backend": "http://localhost/response.php",
+            /* Callback функция вызываемая перед отправкой. При возврате false отправки не происходит */
+            "onSubmitBefore": function () {
+                console.log("onSubmitBefore");
+                return true;
+            },
+            /* Callback функция вызываемая в конце успешной отправки. В ней можно вставлять редирект */
+            "onSubmitAfter": function () {
+                console.log("onSubmitAfter");
+                /* Ссылка на архив ZChecker.archive*/
+                console.log(ZChecker.archive);
+            }
+        }
+        ZChecker.init(params);
+    });
+</script>
+<!-- Конец кода подключения Проверятора-->
+
+</body>
+</html>
